@@ -45,45 +45,59 @@ public class RequestInput {
 
 	// Get a int from the user, must be in acceptable range value
 	public static int getInt(String question, int... acceptableNumber) {
-		String input = null;
 		int resultValue;
 		boolean validInt = false;
+		String input = null;
 		scanner = new Scanner(System.in);
 		while (true) {
 			try {
-				System.out.println(question);
+				System.out.print(question);
 				input = scanner.nextLine();
 				resultValue = Integer.parseInt(input);
 				for (int i = 0; i < acceptableNumber.length; i++) {
-					if (resultValue != acceptableNumber[i]) {
+					if (resultValue == acceptableNumber[i]) {
 						validInt = true;
 					}
 				}
 				if (!validInt) {
 					throw new InvalidAcceptableNumberException();
 				}
+
 				return resultValue;
-
 			} catch (NumberFormatException e) {
-				System.out.println("You have not provided a valid interger type (" + input + ")");
-
+				System.out.println("You have not provided a valid integer type (" + input + ")");
 			} catch (InvalidAcceptableNumberException e) {
-				System.out.println("You have not provided an acceptable valid number (" + input + ")");
+				System.out.println("You have not provided a value within the acceptable range (" + input + ")");
 			}
 		}
 	}
 
 	// Get a String from the user, must be an acceptable value
-	public static String getString(String question, String... s) {
-		String input;
+	public static String getString(String question, String... acceptableWords) {
+		String input = null;
 		String resultValue;
+		boolean validWord = false;
 		scanner = new Scanner(System.in);
-		System.out.print(question);
-		input = scanner.nextLine();
-		resultValue = input;
-		return resultValue;
-	}
+		while (true) {
+			try {
+				System.out.println(question);
+				input = scanner.nextLine();
+				resultValue = input;
 
-	// Create your own helper method that you may find useful
+				for (int i = 0; i < acceptableWords.length; i++) {
+					if (resultValue.trim().replaceAll("", "").equalsIgnoreCase(acceptableWords[i])) {
+						validWord = true;
+					}
+				}
+				if (!validWord) {
+					throw new InvalidAcceptableWordException();
+				}
+				return resultValue;
+
+			} catch (InvalidAcceptableWordException e) {
+				System.out.println("You have not provided an acceptable valid number (" + input + ")");
+			}
+		}
+	}
 
 }
