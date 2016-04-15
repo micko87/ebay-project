@@ -8,7 +8,7 @@
  *
  */
 
-package com.sqa.MA.util.helpers;
+package com.sqa.MA.util.helpers.math;
 
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -16,6 +16,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import com.sqa.MA.util.helpers.MyMath;
 
 /**
  * MyMathTests //ADDD (description of class)
@@ -30,7 +32,7 @@ import org.junit.runners.Parameterized.Parameters;
  *
  */
 @RunWith(Parameterized.class)
-public class MyMathTests {
+public class PowerTests {
 
 	@Parameters
 	public static Object[][] getData() {
@@ -44,7 +46,7 @@ public class MyMathTests {
 	private double num;
 	private double power;
 
-	public MyMathTests(double num, double power, double expextedResult) {
+	public PowerTests(double num, double power, double expextedResult) {
 		super();
 		this.expectedResult = expextedResult;
 		this.num = num;
