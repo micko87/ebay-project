@@ -1,4 +1,4 @@
-## BasicProject
+## General Project
 
 ### March 25, 2016
 
