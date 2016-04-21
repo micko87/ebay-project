@@ -1,8 +1,8 @@
-## General Project
+## basic-auto-project
 
-### March 25, 2016
+### April 20, 2016
 
-My third version controlled project
+For automation projects
 
 * git 
 * Java 7
