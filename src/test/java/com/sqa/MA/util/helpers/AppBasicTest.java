@@ -10,9 +10,7 @@
 
 package com.sqa.MA.util.helpers;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 /**
  * AppBasicsTests //ADDD (description of class)
@@ -62,7 +60,7 @@ public class AppBasicTest {
 	 *
 	 * @return
 	 */
-	@Test
+	@Test(priority = 0)
 	public void testwelcomeUser() {
 		userName = AppBasics.welcomeUserAndGetUserName(appName);
 
